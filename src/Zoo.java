@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Zoo {
@@ -9,7 +10,10 @@ public class Zoo {
    */
   public static void feed(List list) {
     // TODO fix method declaration
-    System.out.println("Feeding birds");
+    for (int i=0; i<list.size(); i++)
+    {
+      System.out.println("Feeding birds");
+    }
     // TODO feed birds in the cycle
   }
 
@@ -19,9 +23,12 @@ public class Zoo {
    * @param list list of birds of particular type.
    * @param bird a new bird.
    */
-  public static void acceptBird(List list, FlyingBird bird) {
-    // TODO fix method declaration
+  public static void acceptBird(List<? super FlyingBird> list, FlyingBird bird) {
+    list.add(bird);
+    bird.checkWings();
     System.out.println("Accepting a bird to a section");
+   // }
+    // TODO fix method declaration
     // TODO check flying bird wings
     // TODO add a bird to the list and print it
   }
@@ -33,8 +40,12 @@ public class Zoo {
    * @param newBird bird to add.
    */
   public static void registerBird(List list, Bird newBird) {
+    list.add(newBird);
+   // list.add(new ArrayList<>())
+    for (int i=0; i<list.size(); i++){
+      System.out.println("Adding a bird to the birds list");
+    }
     // TODO fix method declaration
-    System.out.println("Adding a bird to the birds list");
     // TODO add a bird to list
     // TODO print birds in the cycle
   }
